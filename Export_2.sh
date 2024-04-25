@@ -32,7 +32,7 @@ if [[ $choix = "1"]]; then
 
     sudo mkdir -p "$FOLDER"
 
-    if [[ $FOLDER -eq 0 ]]; then
+    if [[ "$FOLDER" -eq 0 ]]; then
     	echo "Le dossier a était créé avec succés dans : $FOLDER "
     else
     	echo "le fichier n'a pas pu être crée"
@@ -55,8 +55,7 @@ DATE=$(date +"%d-%m-%Y")
 NM_EXPORT="$DATE"_"$EXPORT".sql
 
 
-
-mysqldump -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" > $FOLDER
+mysqldump -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" > $FOLDER"/"$NM_EXPORT
 
 
 
